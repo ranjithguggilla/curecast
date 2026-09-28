@@ -1,0 +1,168 @@
+{
+  "dataset": {
+    "rows": 1030,
+    "features_raw": 8,
+    "features_engineered": 6,
+    "train_rows": 824,
+    "test_rows": 206
+  },
+  "eda": {
+    "n_rows": 1030,
+    "n_features": 8,
+    "target_mean": 35.82,
+    "target_std": 16.71,
+    "target_min": 2.33,
+    "target_max": 82.6,
+    "target_skew": 0.417,
+    "top_correlations": [
+      {
+        "feature": "cement",
+        "r": 0.498,
+        "p_value": 1.324183307226958e-65,
+        "n": 1030
+      },
+      {
+        "feature": "superplastic",
+        "r": 0.366,
+        "p_value": 5.131485052742802e-34,
+        "n": 1030
+      },
+      {
+        "feature": "age",
+        "r": 0.329,
+        "p_value": 2.1063405536320105e-27,
+        "n": 1030
+      },
+      {
+        "feature": "water",
+        "r": -0.29,
+        "p_value": 2.3506546475112318e-21,
+        "n": 1030
+      },
+      {
+        "feature": "fineagg",
+        "r": -0.167,
+        "p_value": 6.704113568134128e-08,
+        "n": 1030
+      },
+      {
+        "feature": "coarseagg",
+        "r": -0.165,
+        "p_value": 1.0183513390865625e-07,
+        "n": 1030
+      },
+      {
+        "feature": "slag",
+        "r": 0.135,
+        "p_value": 1.4135673825179704e-05,
+        "n": 1030
+      },
+      {
+        "feature": "ash",
+        "r": -0.106,
+        "p_value": 0.0006751583555754802,
+        "n": 1030
+      }
+    ]
+  },
+  "cv": {
+    "linear": {
+      "r2": 0.6120479549099859,
+      "rmse": 10.498185399387463,
+      "mae": 8.242872722867771
+    },
+    "ridge": {
+      "r2": 0.6125153730190398,
+      "rmse": 10.491859203966206,
+      "mae": 8.239967140658807
+    },
+    "elasticnet": {
+      "r2": 0.6081169062712144,
+      "rmse": 10.5512394581717,
+      "mae": 8.30688167747561
+    },
+    "knn": {
+      "r2": 0.7316482313869477,
+      "rmse": 8.731270564908714,
+      "mae": 6.3201169436833515
+    },
+    "svr": {
+      "r2": 0.8347978905762218,
+      "rmse": 6.8506693967424885,
+      "mae": 4.81317739575207
+    },
+    "random_forest": {
+      "r2": 0.899207714133042,
+      "rmse": 5.351048197589123,
+      "mae": 3.694171514940023
+    },
+    "gradient_boosting": {
+      "r2": 0.9263836891388455,
+      "rmse": 4.573116238404185,
+      "mae": 3.0771808993966947
+    },
+    "hist_gbr": {
+      "r2": 0.9180990358432962,
+      "rmse": 4.823582630367002,
+      "mae": 2.988221398159802
+    }
+  },
+  "winner": "gradient_boosting",
+  "test": {
+    "r2": 0.933476160646367,
+    "rmse": 4.140248341073959,
+    "mae": 2.8907574643077196
+  },
+  "naive_baseline": {
+    "r2": -0.00015448052100297538,
+    "rmse": 16.053557251405937,
+    "mae": 13.052344236026016
+  },
+  "permutation_importance": {
+    "cement": 0.8533790465424513,
+    "slag": 0.3640244486838339,
+    "ash": 0.13340896198931412,
+    "water": 0.20965995178350877,
+    "superplastic": 0.008279223758649312,
+    "coarseagg": 0.01279954114366207,
+    "fineagg": 0.0156284388183844,
+    "age": 0.7816232346591896
+  },
+  "optimizer_demo": {
+    "target_strength_mpa": 40.0,
+    "age_days": 28,
+    "baseline_mix": {
+      "cement": 480.0,
+      "slag": 0.0,
+      "ash": 0.0,
+      "water": 192.0,
+      "superplastic": 4.0,
+      "coarseagg": 968.0,
+      "fineagg": 773.0,
+      "age": 28.0
+    },
+    "baseline_co2_kg_per_m3": 454.6,
+    "baseline_cost_usd_per_m3": 103.02,
+    "optimised_mix": {
+      "cement": 160.0,
+      "slag": 144.0,
+      "ash": 96.0,
+      "water": 144.0,
+      "superplastic": 6.0,
+      "coarseagg": 968.0,
+      "fineagg": 773.0,
+      "age": 28.0
+    },
+    "optimised_predicted_strength_mpa": 44.46,
+    "optimised_co2_kg_per_m3": 178.3,
+    "optimised_cost_usd_per_m3": 85.41,
+    "meets_target": true,
+    "savings": {
+      "co2_saved_kg_per_m3": 276.3,
+      "co2_saved_pct": 60.8,
+      "cost_saved_usd_per_m3": 17.61,
+      "cost_saved_pct": 17.1
+    }
+  },
+  "runtime_seconds": 5.5
+}
